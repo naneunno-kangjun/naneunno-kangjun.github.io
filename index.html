@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kangjun Noh | Trustworthy LLM</title>
+  <meta name="description" content="Kangjun Noh — Trustworthy LLM / AI Reliability. Yonsei University Integrated Ph.D.">
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --bg-soft:#121212;
+      --text:#eaeaea;
+      --muted:#a8a8a8;
+      --line:#1f1f1f;
+      --accent:#7dd3fc;
+      --maxw: 880px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 18px 60px}
+    header{padding:26px 0 8px;border-bottom:1px solid var(--line);margin-bottom:20px}
+    .title{font-size:1.9rem;font-weight:700;margin:0}
+    .subtitle{margin:6px 0 0;color:var(--muted);font-size:0.98rem}
+    nav{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 2px}
+    nav a{font-weight:600;color:var(--text)}
+    section{padding:22px 0;border-top:1px solid var(--line)}
+    h2{font-size:1.15rem;letter-spacing:.3px;margin:0 0 14px;font-weight:700}
+    p{margin:10px 0}
+    .grid{display:grid;gap:14px}
+    .kicker{display:inline-block;font-size:.78rem;color:var(--muted);letter-spacing:.4px;text-transform:uppercase;border:1px solid var(--line);padding:4px 8px;border-radius:999px;margin-bottom:12px;background:var(--bg-soft)}
+    .card{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .card h3{margin:0 0 6px;font-size:1.02rem}
+    .meta{color:var(--muted);font-size:.9rem;margin:2px 0 8px}
+    .bullets{margin:6px 0 0;padding-left:18px}
+    .bullets li{margin:4px 0}
+    .pub li{margin:12px 0}
+    footer{border-top:1px solid var(--line);margin-top:26px;padding-top:18px;color:var(--muted);font-size:.9rem}
+    @media (min-width:800px){ .grid-2{grid-template-columns:1fr 1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="title">Kangjun Noh</h1>
+      <p class="subtitle">Integrated Ph.D. Student, Yonsei University · Trustworthy LLM / AI Reliability</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <span class="kicker">About</span>
+      <p>
+        I study <b>Trustworthy Large Language Models</b> with a focus on <b>reliability guarantees</b>, <b>risk control</b>,
+        and <b>uncertainty quantification</b>. My work designs conformal-inference–based methods for safe LLM use in
+        real systems and builds auditable pipelines for RAG and embeddings.
+      </p>
+    </section>
+
+    <section id="research">
+      <span class="kicker">Research</span>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>MACE — Multi-LLM Adaptive Conformal Ensembles</h3>
+          <p class="meta">Risk-controlled retrieval with group-conditional calibration</p>
+          <ul class="bullets">
+            <li>Achieves target coverage while improving retention under domain shift</li>
+            <li>Designed for reliable RAG in high-stakes settings</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>UEC — Uncertainty-driven Embedding Convolution</h3>
+          <p class="meta">Probabilistic embeddings for robust retrieval/classification</p>
+          <ul class="bullets">
+            <li>Incorporates embedding uncertainty to stabilize ranking</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <span class="kicker">Publications</span>
+      <ul class="pub">
+        <li>
+          <b>LBC: Language-Based Classifier for Out-of-Variable Generalization</b><br/>
+          NAACL 2025 (Oral). Authors: Kangjun Noh, Baekryun Seong, Hoyoon Byun, Youngjun Choi, Sungjin Song, Kyungwoo Song.
+          <!-- Optional links
+          <div class="meta"><a href="#" target="_blank">Paper</a> · <a href="#" target="_blank">Code</a></div>
+          -->
+        </li>
+        <li>
+          <b>Multi-purpose Technology Commercialization Recommender System with Large-Scale Korean Language Model</b><br/>
+          The Journal of Supercomputing, 2025. Authors: Kangjun Noh, Hyeji Hwang, Yongtaek Lim, Changdae Oh,
+          Seungyeon Kim, Eunkyeong Lee, Yunjeong Choi, Sungjin Kim, Hosik Choi, Kyungwoo Song.
+        </li>
+        <li>
+          <b>MACI: Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses</b><br/>
+          Under review (ICLR 2026). Authors: Kangjun Noh et al.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <span class="kicker">Contact</span>
+      <p>
+        Email: <a href="mailto:kangjunnoh@yonsei.ac.kr">kangjunnoh@yonsei.ac.kr</a><br/>
+        GitHub: <a href="https://github.com/kangjunnoh" target="_blank">github.com/kangjunnoh</a><br/>
+        LinkedIn: <a href="https://linkedin.com/in/kangjunnoh" target="_blank">linkedin.com/in/kangjunnoh</a>
+      </p>
+    </section>
+
+    <footer>
+      © 2025 Kangjun Noh · Hosted on GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
