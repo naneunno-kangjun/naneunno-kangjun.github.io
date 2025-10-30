@@ -16,7 +16,7 @@
       /* Venue colors */
       --naacl:#e63946;        /* red */
       --iclr:#9be15d;         /* light green */
-      --neurips:#7e57c2;      /* purple */
+      --neurips:#7e57c2;      /* purple (not used now, reserved) */
       --journal:#2e7bcf;      /* neutral blue for journals */
     }
     *{box-sizing:border-box}
@@ -35,13 +35,16 @@
     .kicker{display:inline-block;font-size:.78rem;color:var(--muted);letter-spacing:.4px;text-transform:uppercase;border:1px solid var(--line);padding:4px 8px;border-radius:999px;margin-bottom:12px;background:#f7f7f7}
     .pub-list{list-style:none;padding:0;margin:0}
     .pub-list li{padding:14px 0;border-bottom:1px solid var(--line)}
+    .links{font-size:.95rem;margin-top:6px}
+    .links a{margin-right:10px}
     .venue-badge{font-weight:700;margin-left:6px}
     .venue-badge.naacl{color:var(--naacl)}
     .venue-badge.iclr{color:var(--iclr)}
-    .venue-badge.neurips{color:var(--neurips)}
     .venue-badge.journal{color:var(--journal)}
     .authors{color:var(--muted);font-size:.95rem}
     .note{font-size:.85rem;color:var(--muted);margin-top:4px}
+    ul.clean{margin:8px 0 0 18px}
+    ul.clean li{margin:6px 0}
     footer{border-top:1px solid var(--line);margin-top:26px;padding-top:18px;color:var(--muted);font-size:.9rem}
   </style>
 </head>
@@ -68,8 +71,18 @@
 
     <section id="research">
       <span class="kicker">Research</span>
-      <!-- Intentionally left blank per request -->
-      <p style="color:#9a9a9a">Coming soon.</p>
+
+      <h2>Ongoing</h2>
+      <ul class="clean">
+        <li><b>Statistical hallucination detection for LLMs</b> — conformal inference, and group-conditional calibration for high-stakes use.</li>
+        <li><b>Measuring & mitigating LLM bias</b> — bias auditing protocols (group & counterfactual), mitigation via calibration, reweighting, and data augmentation.</li>
+      </ul>
+
+      <h2 style="margin-top:18px;">Previous</h2>
+      <ul class="clean">
+        <li><b>Tabular data prediction with LLMs</b> — language-based modeling for OOV (out-of-variable) generalization.</li>
+        <li><b>Technology commercialization (TC) recommender with a Korean LLM</b> — tag-aware, multi-purpose recommendation pipeline using TC-BERT.</li>
+      </ul>
     </section>
 
     <section id="publications">
@@ -78,10 +91,15 @@
 
         <li>
           <div><b>LBC: Language-Based Classifier for Out-of-Variable Generalization</b>
-            <span class="venue-badge naacl">NAACL 2025 (Oral)</span>
+            <span class="venue-badge naacl">NAACL 2025 main (Oral Presentation)</span>
           </div>
           <div class="authors">
             <b>Kangjun Noh</b>, Baekryun Seong, Hoyoon Byun, Youngjun Choi, Sungjin Song, Kyungwoo Song
+          </div>
+          <div class="links">
+            <!-- Replace '#' with the actual ACL Anthology / arXiv link when available -->
+            <a href="https://github.com/MLAI-Yonsei/LBC" target="_blank" rel="noopener">Code (GitHub)</a>
+            <a href="#" target="_blank" rel="noopener">Paper (ACL Anthology)</a>
           </div>
         </li>
 
@@ -93,11 +111,14 @@
             <b>Kangjun Noh</b><sup>†</sup>, Hyeji Hwang<sup>†</sup>, Yongtaek Lim<sup>†</sup>, Changdae Oh<sup>†</sup>, Seungyeon Kim, Eunkyeong Lee, Yunjeong Choi, Sungjin Kim, Hosik Choi, Kyungwoo Song
           </div>
           <div class="note"><sup>†</sup> Equal contribution (first four authors)</div>
+          <div class="links">
+            <a href="https://doi.org/10.1007/s11227-025-07341-4" target="_blank" rel="noopener">Paper (Springer DOI)</a>
+          </div>
         </li>
 
         <li>
           <div><b>MACI: Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses</b>
-            <span class="venue-badge iclr">ICLR 2026 (Under Review)</span>
+            <span class="venue-badge iclr">Under Review</span>
           </div>
           <div class="authors">
             <b>Kangjun Noh</b>, Seongchan Lee, Ilmun Kim, Kyungwoo Song
@@ -111,7 +132,7 @@
       <span class="kicker">Contact</span>
       <p>
         Email: <a href="mailto:shwndnjs58@yonsei.ac.kr">shwndnjs58@yonsei.ac.kr</a><br/>
-        GitHub: <a href="https://github.com/naneunno-kangjun" target="_blank">github.com/naneunno-kangjun</a>
+        GitHub: <a href="https://github.com/naneunno-kangjun" target="_blank" rel="noopener">github.com/naneunno-kangjun</a>
       </p>
     </section>
 
