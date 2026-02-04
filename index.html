@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -217,5 +217,539 @@
       © 2025 Kangjun Noh · Hosted on GitHub Pages
     </footer>
   </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kangjun Noh | Trustworthy LLM</title>
+  <meta name="description" content="Kangjun Noh — Trustworthy LLM / AI Reliability. Integrated PhD at Yonsei University">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --text-main: #ffffff;
+      --text-muted: #a0a0a0;
+      --accent: #ffffff;
+      --border: rgba(255, 255, 255, 0.1);
+      --hover-glow: rgba(255, 255, 255, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* --- [Background Canvas Animation] --- */
+    #canvas-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* --- [Layout & Typography] --- */
+    a { color: inherit; text-decoration: none; transition: 0.3s; }
+    a:hover { color: var(--text-muted); }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* --- [Header / Nav] --- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+      backdrop-filter: blur(5px);
+    }
+    .logo { font-weight: 800; letter-spacing: -0.5px; font-size: 1.2rem; }
+    
+    nav { display: flex; gap: 24px; }
+    nav a { 
+      font-size: 0.95rem; 
+      font-weight: 500; 
+      color: var(--text-muted); 
+      position: relative;
+    }
+    nav a:hover { color: var(--text-main); }
+    nav a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 1px; 
+      background: var(--text-main); transition: width 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* --- [Hero Section] --- */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+      gap: 40px;
+    }
+
+    .hero-img-box {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      flex-shrink: 0;
+    }
+
+    .hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 30px rgba(255,255,255,0.05);
+      transition: transform 0.5s ease;
+    }
+    .hero-img-box:hover img {
+      transform: scale(1.05);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .hero-text { flex: 1; }
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #fff, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .typing-container {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      height: 1.6em; /* prevent layout shift */
+      display: flex;
+      align-items: center;
+    }
+    .typing-text::after {
+      content: '|';
+      animation: blink 1s step-start infinite;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1px solid var(--text-main);
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: var(--text-main);
+      color: var(--bg);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    }
+
+    /* --- [Section Styling] --- */
+    section { padding: 80px 0; border-top: 1px solid var(--border); }
+    section:first-of-type { border-top: none; }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    h2 { font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; }
+    
+    /* List Styles */
+    ul.clean { list-style: none; padding-left: 0; }
+    ul.clean li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+      color: var(--text-muted);
+    }
+    ul.clean li::before {
+      content: '▹';
+      position: absolute; left: 0; color: var(--text-main);
+    }
+    ul.clean li b { color: var(--text-main); }
+
+    /* --- [Publications Card Style] --- */
+    .pub-list { list-style: none; display: grid; gap: 24px; }
+    .pub-item {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .pub-item:hover {
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.05);
+    }
+    
+    .pub-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    
+    /* Venue Badge - Minimalist */
+    .venue-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 99px;
+      color: rgba(255,255,255,0.9);
+      margin-left: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .authors { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; }
+    .authors b { color: var(--text-main); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.3); }
+
+    .links { display: flex; gap: 16px; font-size: 0.9rem; margin-top: 14px; }
+    .links a {
+      color: var(--text-main);
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+    }
+    .links a:hover { border-bottom-color: var(--text-main); }
+
+    /* --- [Footer] --- */
+    footer {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--text-main); }
+
+    /* --- [Animations] --- */
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Scroll Reveal Class */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column-reverse; text-align: center; padding-top: 20px; min-height: auto;}
+      .hero-img-box { width: 200px; height: 200px; margin: 0 auto; }
+      .hero-text h1 { font-size: 2.5rem; }
+      .typing-container { justify-content: center; font-size: 1.2rem; }
+      .hero-desc { margin: 0 auto 30px; }
+      nav { display: none; } /* Could replace with hamburger menu if needed */
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas-bg"></canvas>
+
+  <div class="wrap">
+    <header>
+      <div class="logo">K.NOH</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about" class="hero">
+      <div class="hero-text reveal">
+        <h1>Kangjun Noh</h1>
+        <div class="typing-container">
+          <span class="typing-text"></span>
+        </div>
+        <p class="hero-desc">
+          Integrated Ph.D. Student at Yonsei University. <br>
+          Building reliable, robust, and trustworthy AI systems for the real world.
+        </p>
+        <a href="#contact" class="btn">Get in touch</a>
+      </div>
+      <div class="hero-img-box reveal">
+        <img src="IMG_0510.jpg" alt="Kangjun Noh Profile">
+      </div>
+    </section>
+
+    <section id="research" class="reveal">
+      <div class="section-title">Research Focus</div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        <div>
+          <h2>Ongoing</h2>
+          <ul class="clean">
+            <li><b>Hallucination Detection</b> — Conformal inference & group-conditional calibration.</li>
+            <li><b>Bias Mitigation</b> — Auditing protocols & counterfactual reweighting.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Previous</h2>
+          <ul class="clean">
+            <li><b>Tabular LLM Prediction</b> — Language-based modeling for OOV generalization.</li>
+            <li><b>Recommender Systems</b> — Tag-aware pipeline using TC-BERT.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="reveal">
+      <div class="section-title">Publications</div>
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <div class="pub-title">
+            Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses
+            <span class="venue-badge">ICLR 2026</span>
+          </div>
+          <div class="authors">
+            <b>Kangjun Noh</b>, Seongchan Lee, Ilmun Kim, Kyungwoo Song†
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-title">
+            Uncertainty-Driven Embedding Convolution
+            <span class="venue-badge">ICLR 2026</span>
+          </div>
+          <div class="authors">
+            Sungjum Lim, <b>Kangjun Noh</b>, Youngjun Choi, Heeyoung Lee, Kyungwoo Song†
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-title">
+            Enhancing Causal Discovery in Chronic Diseases: The MAGIC Frame-work Using Multiple LLMs
+            <span class="venue-badge">ISPOR Summit 2025</span>
+          </div>
+          <div class="authors">
+            Jihee Kim*, Minseol Jang*, Miryoung Kim, Hyun Jin Han, <b>Kangjun Noh</b>, Sumin Park, Kyungwoo Song†, Hae Sun Suh†
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-title">
+            Multi-purpose Technology Commercialization Recommender System
+            <span class="venue-badge">Journal of Supercomputing, 2025</span>
+          </div>
+          <div class="authors">
+            <b>Kangjun Noh</b><sup>†</sup>, Hyeji Hwang<sup>†</sup>, Yongtaek Lim<sup>†</sup>, Changdae Oh<sup>†</sup>, et al.
+          </div>
+          <div class="links">
+            <a href="https://doi.org/10.1007/s11227-025-07341-4" target="_blank">Paper</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-title">
+            LBC: Language-Based Classifier for Out-of-Variable Generalization
+            <span class="venue-badge">NAACL 2025 (Oral)</span>
+          </div>
+          <div class="authors">
+            <b>Kangjun Noh</b>, Baekryun Seong, Hoyoon Byun, Youngjun Choi, Sungjin Song, Kyungwoo Song
+          </div>
+          <div class="links">
+            <a href="https://github.com/MLAI-Yonsei/LBC" target="_blank">Code</a>
+            <a href="https://aclanthology.org/2025.naacl-long.583/" target="_blank">Paper</a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="contact" class="reveal">
+      <div class="section-title">Contact</div>
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">
+        Open to collaborations on Trustworthy AI.
+      </p>
+      <ul class="clean" style="font-size: 1rem;">
+        <li>Email: <a href="mailto:shwndnjs58@yonsei.ac.kr">shwndnjs58@yonsei.ac.kr</a></li>
+        <li>GitHub: <a href="https://github.com/naneunno-kangjun" target="_blank">github.com/naneunno-kangjun</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      © 2025 Kangjun Noh · Yonsei University
+    </footer>
+  </div>
+
+  <script>
+    // --- 1. Typing Effect ---
+    const textElement = document.querySelector('.typing-text');
+    const texts = ["Trustworthy LLM", "AI Reliability", "Uncertainty Quantification", "Risk Control"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    (function type() {
+      if (count === texts.length) { count = 0; }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      
+      textElement.textContent = letter;
+      
+      if (letter.length === currentText.length) {
+        setTimeout(() => {
+          // erase effect logic could go here, but simple cycle is safer for now
+          // For simplicity, we just reset and go to next word after a pause
+          count++;
+          index = 0;
+        }, 2000); // Wait 2s before next word
+        setTimeout(type, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    })();
+
+
+    // --- 2. Scroll Animation (Fade In) ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 150;
+
+      revealElements.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Trigger once on load
+
+
+    // --- 3. Particle Background Animation (Neural Network vibe) ---
+    const canvas = document.getElementById('canvas-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.directionX = (Math.random() * 0.4) - 0.2;
+        this.directionY = (Math.random() * 0.4) - 0.2;
+        this.size = Math.random() * 2;
+      }
+      update() {
+        if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+        if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+        this.x += this.directionX;
+        this.y += this.directionY;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'; // Faint dots
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      let numberOfParticles = (canvas.height * canvas.width) / 9000;
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        
+        // Draw connections
+        for (let j = i; j < particlesArray.length; j++) {
+          const dx = particlesArray[i].x - particlesArray[j].x;
+          const dy = particlesArray[i].y - particlesArray[j].y;
+          const distance = Math.sqrt(dx*dx + dy*dy);
+          
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 - distance/1000})`; // Faint lines
+            ctx.lineWidth = 1;
+            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+      init();
+    });
+
+    init();
+    animate();
+
+  </script>
 </body>
 </html>
